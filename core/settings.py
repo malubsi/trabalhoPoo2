@@ -1,5 +1,5 @@
 """
-Django settings for fullsite project.
+Django settings for core project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't&$r0+-3&_ze(c+!=86@7cb(c+$l$p*c#v+cdqyf2e6(6_x$x5'
+SECRET_KEY = '=htb1=fbpfvyhx&56iw&mr!0s*xoso+=lv*620&@qwg(*dfvu%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,11 +29,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-TEMPLATE_DIRS = [
-    os.path.join(BASE_DIR, 'templates'),
-    '/fullsite/website/templates',
-]
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,10 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'website',
 )
-
-TEMPLATE_LOADERS = [
-    'django.template.loaders.filesystem.Loader',
-]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,9 +49,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'fullsite.urls'
+ROOT_URLCONF = 'core.urls'
 
-WSGI_APPLICATION = 'fullsite.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
