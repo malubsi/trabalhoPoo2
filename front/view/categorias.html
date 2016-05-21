@@ -1,0 +1,15 @@
+  <!-- *****************************************************************************************************************
+	HOME
+	 ***************************************************************************************************************** -->
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3 receita container" ng-repeat = "categoria in categorias">
+            <a href="#/receitasInCategoria/{{categoria.id}}">
+              <p class="nomeReceita text-center maiusculo">{{categoria.nome}}</p>
+              <p class="categoriaReceita text-center">{{categoria.categoria_macro.nome}}</p>
+            </a>
+				</div>
+			</div>
+	    </div>
+	</div>

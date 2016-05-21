@@ -1,0 +1,16 @@
+  <!-- *****************************************************************************************************************
+	HOME
+	 ***************************************************************************************************************** -->
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3 receita container" ng-repeat = "receita in receitas">
+            <a href="#/receita/{{receita.id}}">
+              <img class="zoom img-responsive" id="indexImg" src="{{receita.imagem}}" alt="{{receita.nome}}">
+              <p class="nomeReceita text-center maiusculo">{{receita.nome}}</p>
+              <p class="categoriaReceita text-center">{{receita.categorias.nome}}</p>
+            </a>
+				</div>
+			</div>
+	    </div>
+	</div>

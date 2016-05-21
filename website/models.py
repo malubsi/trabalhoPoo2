@@ -2,11 +2,6 @@ from django.db import models
 from django.utils import timezone
 from PIL import Image
 
-class Categorias(models.Model):
-    nome = models.CharField(max_length=20, null=True, unique=True)
-
-    def __str__(self):
-        return self.nome
 
 class CategoriasMacro(models.Model):
     nome = models.CharField(max_length=20, null=True, unique=True)
@@ -14,37 +9,39 @@ class CategoriasMacro(models.Model):
     def __str__(self):
         return self.nome
 
-class UnidadesMedida(models.Model):
-    descricao = models.CharField(max_length=20, null=True,unique=True)
-    categorias = models.ManyToManyField(CategoriasMacro)
 
-    def __str__(self):
-        return self.descricao
-
-class Ingredientes(models.Model):
-    nome = models.CharField(max_length=20,null=True)
-    quantidade = models.FloatField(null=True)
-    unidadeMedida = models.ManyToManyField(UnidadesMedida)
+class Categorias(models.Model):
+    nome = models.CharField(max_length=20, null=True, unique=True)
+    categoria_macro = models.ForeignKey(CategoriasMacro)
 
     def __str__(self):
         return self.nome
 
+class Medidas(models.Model):
+    nome = models.CharField(max_length=15,unique=True)
+    def __str__(self):
+        return self.nome
+
+class Ingredientes(models.Model):
+    nome = models.CharField(max_length=20,null=True)
+    quantidade = models.FloatField(null=True)
+    unidade_de_medida = models.ForeignKey(Medidas)
+
+    def __str__(self):
+        return '%s %s %s' % (self.nome, self.quantidade, self.unidade_de_medida)
+
+    class Meta:
+        unique_together = ["nome", "quantidade", "unidade_de_medida"]
+        
 class Receitas(models.Model):
-    autor = models.ForeignKey('auth.User', related_name='usuario')
-    nome = models.CharField(max_length=20,unique=True)
-    categoria=models.ForeignKey(
-        Categorias,
-        on_delete=models.CASCADE,
-        null=True
-        )
-    dataCriacao = models.DateTimeField(
-            default=timezone.now)
+    nome = models.CharField(max_length=50,unique=True)
+    categorias=models.ManyToManyField(Categorias)
+    data_de_criacao = models.DateTimeField(default=timezone.now)
     ingredientes=models.ManyToManyField(Ingredientes)
-    modoPreparo = models.TextField()
-    tempoPreparo = models.TimeField()
+    modo_de_preparo = models.TextField()
+    tempo_de_preparo = models.TimeField()
     rendimento = models.PositiveIntegerField(null=True)
-    grauDificuldade = models.PositiveIntegerField()
-    avaliacao = models.PositiveIntegerField(null=True,default=0)
+    grau_de_dificuldade = models.PositiveIntegerField()
     imagem = models.ImageField(upload_to='fotos',null=True)
 
     def __str__(self):

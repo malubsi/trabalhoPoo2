@@ -1,0 +1,42 @@
+<div id="headerwrap">
+				<h1 class="nomeReceita text-center maiusculo col-md-12">
+					{{receita.nome}}
+				</h1>
+				<div class="col-md-3 textoGeral maiusculo text-center">
+					<div>
+						<i class="glyphicon glyphicon-time"></i>
+						<span>  Tempo de preparo </span>
+						<br/>
+						<span>{{receita.tempo_de_preparo}}</span>
+					</div>
+					<br/>
+					<div>
+						<i class="glyphicon glyphicon-cutlery"></i>
+						<span>  Rendimento</span>
+						<br/>
+						<span>{{receita.rendimento}} porções</span>
+					</div>
+					<br/>
+					<div>
+						<i class="glyphicon glyphicon-pushpin"></i>
+						<span>  Dificuldade</span>
+						<br/>
+						<span>{{receita.grau_de_dificuldade}}</span>
+					</div>
+					<br/>
+					<div>
+						<i class="glyphicon glyphicon-shopping-cart"></i>
+						<span>  Ingredientes</span>
+						<br/>
+						<p ng-repeat="ingrediente in receita.ingredientes">
+							{{ingrediente.quantidade}}  {{ingrediente.unidade_de_medida}} de {{ingrediente.nome}}
+						</p>
+					</div>
+					<br/>
+					<div class="col-md-7 textoGeral space">
+						<i class="glyphicon glyphicon-fire"></i>
+						<span>  Modo de preparo</span>
+						<br/>
+						<span class="textoGeral"> {{receita.modo_de_preparo}}</span>
+					</div>
+</div>
