@@ -1,16 +1,38 @@
-  <!-- *****************************************************************************************************************
-	HOME
+	<!-- *****************************************************************************************************************
+	 PORTFOLIO SECTION
 	 ***************************************************************************************************************** -->
-	<div id="headerwrap">
-	    <div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-md-3 receita container" ng-repeat = "receita in receitas">
-            <a href="#/receita/{{receita.id}}">
-              <img class="zoom img-responsive" id="indexImg" src="{{receita.imagem}}" alt="{{receita.nome}}">
-              <p class="nomeReceita text-center maiusculo">{{receita.nome}}</p>
-              <p class="categoriaReceita text-center">{{receita.categorias.nome}}</p>
-            </a>
-				</div>
-			</div>
-	    </div>
-	</div>
+	 <div id="portfoliowrap">
+        <div class="portfolio-centered col-md-12 positionfull">
+            <div class="recentitems portfolio">
+							<div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
+								<div class="he-wrap tpl6 col-md-6 positionfull">
+									<img class="portfolio-centered" ng-src="{{receita.imagem}}" class="img-responsive">
+									<div class="he-view">
+										<div class="bg a0" data-animate="fadeIn">
+													<h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
+													<p class="receitadescricao">{{receita.modo_de_preparo}}</p>
+                          <a href="#/receita/{{receita.id}}" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+										</div>
+									</div><!-- he view -->
+								</div><!-- he wrap -->
+							</div><!-- end col-12 -->
+						</div><!-- portfolio -->
+				</div><!-- portfolio container -->
+	 </div><!--/Portfoliowrap -->
+
+	 <!-- *****************************************************************************************************************
+		SERVICE LOGOS
+		***************************************************************************************************************** -->
+		<div id="service">
+		 <div class="container">
+				 <div class="row centered padding-top">
+					 <div class="col-md-4" ng-repeat= "categoria in categorias">
+						 <h4>{{categoria.nome}}</h4>
+					 <div class="hline-home"></div>
+						 <p>Veja mais delicionas receitas na categoria <strong>{{categoria.nome}}</strong></p>
+					 <div class="hline-home"></div>
+						 <p><br/><a href="#/macro/receitas/{{categoria.id}}" class="btn btn-theme">Veja mais</a></p>
+					 </div>
+			 </div>
+		 </div><! --/container -->
+		</div><! --/service -->

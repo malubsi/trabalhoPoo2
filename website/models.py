@@ -17,22 +17,17 @@ class Categorias(models.Model):
     def __str__(self):
         return self.nome
 
-class Medidas(models.Model):
-    nome = models.CharField(max_length=15,unique=True)
-    def __str__(self):
-        return self.nome
-
 class Ingredientes(models.Model):
     nome = models.CharField(max_length=20,null=True)
     quantidade = models.FloatField(null=True)
-    unidade_de_medida = models.ForeignKey(Medidas)
+    unidade_de_medida = models.CharField(max_length=15,null=True)
 
     def __str__(self):
         return '%s %s %s' % (self.nome, self.quantidade, self.unidade_de_medida)
 
     class Meta:
         unique_together = ["nome", "quantidade", "unidade_de_medida"]
-        
+
 class Receitas(models.Model):
     nome = models.CharField(max_length=50,unique=True)
     categorias=models.ManyToManyField(Categorias)
@@ -43,6 +38,15 @@ class Receitas(models.Model):
     rendimento = models.PositiveIntegerField(null=True)
     grau_de_dificuldade = models.PositiveIntegerField()
     imagem = models.ImageField(upload_to='fotos',null=True)
+
+    def __str__(self):
+        return self.nome
+
+class ReceitasCategoria(models.Model):
+    nome = models.CharField(max_length=50,unique=True)
+    categorias = models.ManyToManyField(Categorias)
+    receitas = models.ManyToManyField(Receitas)
+    categoria_macro = models.ManyToManyField(CategoriasMacro)
 
     def __str__(self):
         return self.nome

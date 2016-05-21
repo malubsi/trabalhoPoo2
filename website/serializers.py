@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Receitas, Ingredientes, CategoriasMacro, Categorias
+from .models import Receitas, Ingredientes, CategoriasMacro, Categorias, ReceitasCategoria
 
 
 class CategoriasMacroSerializer(serializers.ModelSerializer):
@@ -18,10 +18,19 @@ class IngredientesSerializer(serializers.ModelSerializer):
         fields = ('id', 'nome','quantidade','unidade_de_medida')
 
 class ReceitasSerializer(serializers.ModelSerializer):
-    categorias = CategoriasSerializer()
+    categorias = CategoriasSerializer(many=True)
     ingredientes = IngredientesSerializer(many=True)
     tempo_de_preparo =  serializers.TimeField(format='%I:%M')
 
     class Meta:
         model = Receitas
         fields = ('id','nome','categorias','ingredientes','modo_de_preparo', 'tempo_de_preparo','rendimento','grau_de_dificuldade','imagem')
+
+class ReceitasCategoriaSerializer(serializers.ModelSerializer):
+    categorias = CategoriasSerializer(many=True)
+    receitas =  ReceitasSerializer(many=True)
+    categoria_macro = CategoriasMacroSerializer()
+
+    class Meta:
+        model = ReceitasCategoria
+        fields = ('id','nome','categorias', 'receitas', 'categoria_macro')

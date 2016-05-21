@@ -94,6 +94,7 @@ a:focus {
 .navbar-brand {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 900;
+
 }
 
 .navbar-header .navbar-brand {
@@ -118,6 +119,43 @@ a:focus {
 .navbar-default {
 	background-color: #384452;
 	border-color: transparent;
+}
+
+.row.centered.paddingPreparoReceita{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.container {
+    width: 80%;
+		margin-left: 5% auto;
+		margin-right: 5% auto;
+}
+
+.col-md-6.positionfull {
+  position: relative;
+  min-height: 1px;
+	padding-top: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.col-md-12.positionfull {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.receitadescricao{
+	position: relative;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: white;
+}
+
+.he-wrap.tpl6.hover{
+
 }
 
 .dropdown-menu {
@@ -200,16 +238,46 @@ a:focus {
 	border-bottom: 2px solid #ffffff;
 	margin-bottom: 25px;
 }
+
+.hline-home{
+	border-bottom: 2px solid #000000;
+	margin-bottom: 5px;
+}
+
 /*	################################################################
 	SITE WRAPS
 ################################################################# */
 
-#headerwrap {
-	background-color: #a9c4f5;
+#categoriaswrap{
+	background-color: #00cba1;
 	min-height: 550px;
 	padding-top: 100px;
 	padding-bottom: 0px;
 	text-align: center;
+	height: 100%;
+}
+
+#categoriaswrap h3, h5 {
+	color: white;
+	font-weight: 400;
+}
+
+#categoriaswrap h1 {
+	color: white;
+	margin-bottom: 25px;
+}
+
+#categoriaswrap .img-responsive {
+	margin: 0 auto;
+}
+
+#headerwrap {
+	background-color: #00b3fe;
+	min-height: 550px;
+	padding-top: 100px;
+	padding-bottom: 0px;
+	text-align: center;
+	height: 100%;
 }
 
 #headerwrap h3, h5 {
@@ -240,6 +308,7 @@ a:focus {
 
 /* Portfolio Wrap */
 #portfoliowrap {
+	overflow: hidden;
 	padding-top: 60px;
 	margin-bottom: 60px;
 	display: block;
@@ -335,7 +404,7 @@ a:focus {
 /* Footer */
 #footerwrap {
 	padding-top: 60px;
-	padding-bottom: 160px;
+	padding-bottom: 60px;
 	background: #384452;
 }
 
@@ -457,41 +526,4 @@ csmall2 {
 .share i {
 	padding-right: 15px;
 	font-size: 18px;
-}
-
-/*	################################################################
-	OTHER
-################################################################# */
-
-.textoGeral {
-  color: #999;
-  font-size: 14px;
-}
-.corLaranja{
-  color: #FF853B;
-}
-.maiusculo {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-.tituloPrincipal {
-  font-size: 18px;
-  padding: 5px;
-  letter-spacing: 7px;
-  font-weight:400;
-}
-.nomeReceita {
-  font-size: 15px;
-  margin: 10px;
-  margin-bottom: 2px;
-  color: #fff;
-}
-.categoriaReceita {
-  font-size: 15px;
-  color: #888;
-  font-style: italic;
-}
-
-.receita:hover {
-  opacity: .6;
 }

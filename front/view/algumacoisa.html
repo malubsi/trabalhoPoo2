@@ -1,0 +1,27 @@
+<div id="categoriaswrap">
+  		<div class="container">
+      <div class="col-md-12 positionfull" ng-repeat="categoria in categorias">
+
+  			<div class="col-md-2">
+						<h3>  {{categoria.nome}}</h3>
+						<div class="hline-home"></div>
+    		</div>
+
+    		<div class="col-md-10">
+          <div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
+            <div class="he-wrap tpl6 col-md-6 positionfull">
+              <img class="portfolio-centered" ng-src="{{receita.imagem}}" class="img-responsive">
+              <div class="he-view">
+                <div class="bg a0" data-animate="fadeIn">
+                      <h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
+                      <p class="receitadescricao">{{receita.modo_de_preparo}}</p>
+                       <a href="#/receita/{{receita.id}}" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+                </div>
+              </div><!-- he view -->
+            </div><!-- he wrap -->
+          </div><!-- end col-12 -->
+    	</div>
+
+    </div>
+</div>
+</div>

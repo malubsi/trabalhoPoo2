@@ -5,6 +5,9 @@ angular.module("maluReceitas").config(function($routeProvider){
             resolve:{
                     receitas: function(receitasAPI){
                             return receitasAPI.getReceitas();
+                    },
+                    categorias: function(macroCategoriasAPI,$route){
+                      return macroCategoriasAPI.getMacroCategorias();
                     }
             }
         });
@@ -18,16 +21,6 @@ angular.module("maluReceitas").config(function($routeProvider){
             templateUrl:"view/login.html" ,
             controller: "loginCtrl"
         });
-
-        $routeProvider.when("/categorias",{
-           templateUrl:"view/categorias.html" ,
-           controller: "categoriasCtrl",
-           resolve:{
-                      categorias: function(categoriasAPI,$route){
-                        return categoriasAPI.getCategoria();
-                      }
-                    }
-       });
 
        $routeProvider.when("/macroCategorias",{
           templateUrl:"view/macroCategorias.html" ,
@@ -52,15 +45,15 @@ angular.module("maluReceitas").config(function($routeProvider){
             }
         });
 
-        $routeProvider.when("/categoriasInMacroCategoria/:id",{
-           templateUrl:"view/categorias.html" ,
-           controller: "categoriasInMacroCategoriaCtrl",
+        $routeProvider.when("/macro/receitas/:id",{
+           templateUrl:"view/algumacoisa.html" ,
+           controller: "categoriasReceitasCtrl",
            resolve:{
-                   categorias: function(receitasAPI,$route){
+                   categorias: function(categoriasAPI,$route){
                            return categoriasAPI.getCategoriasInMacroCategoria($route.current.params.id);
                    },
-                    macroCategoria: function(macroCategoriasAPI,$route){
-                           return macroCategoriasAPI.getMacroCategoria($route.current.params.id);
+                   receitas: function(receitasAPI,$route){
+                           return receitasAPI.getReceitasInCategoriaMacro($route.current.params.id);
                    }
            }
        });
