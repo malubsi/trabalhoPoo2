@@ -51,4 +51,4 @@ class ReceitasEmCategoriaMacro(generics.ListAPIView):
 
     def get_queryset(self):
         macro = self.kwargs['pk']
-        return ReceitasCategoria.objects.filter(categoria_macro__id=categoria_macro).order_by('nome')
+        return ReceitasCategoria.objects.filter(macro__id=macro).order_by('nome')

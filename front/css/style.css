@@ -92,13 +92,17 @@ a:focus {
 }
 
 .navbar-brand {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Voltaire', sans-serif;
 	font-weight: 900;
 
 }
 
 .navbar-header .navbar-brand {
 	color: white;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #00b3fe;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -184,6 +188,21 @@ a:focus {
   border-color: #00b3fe;
 }
 
+.nav.navbar-nav.navbar-right li a{
+	font-size: 13px;
+}
+
+.dmbutton.adicionar{
+	margin-top: 5px;
+	font-family: 'Voltaire', cursive;
+}
+
+.dmbutton.adicionar:hover{
+	color: #ffffff;
+	background-color: #00b3fe;
+	border-color: #ffffff;
+}
+
 .dmbutton:hover,
 .dmbutton:active,
 .dmbutton:focus{
@@ -244,6 +263,16 @@ a:focus {
 	margin-bottom: 5px;
 }
 
+.linkFooter a{
+	color: white;
+}
+
+.linkFooter a:hover{
+	color: #00b3fe;
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+
 /*	################################################################
 	SITE WRAPS
 ################################################################# */
@@ -272,7 +301,7 @@ a:focus {
 }
 
 #headerwrap {
-	background-color: #00b3fe;
+	background-color: #d8d8d8;
 	min-height: 550px;
 	padding-top: 100px;
 	padding-bottom: 0px;
@@ -281,12 +310,20 @@ a:focus {
 }
 
 #headerwrap h3, h5 {
-	color: white;
+	color: #ff6565;
+	font-family: 'Voltaire', cursive;
 	font-weight: 400;
 }
 
 #headerwrap h1 {
-	color: white;
+	color: #ff6565;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
+#headerwrap h4 {
+	color: #384452;
+	font-family: 'Voltaire', cursive;
 	margin-bottom: 25px;
 }
 

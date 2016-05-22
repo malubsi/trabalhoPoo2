@@ -20,7 +20,6 @@ class IngredientesSerializer(serializers.ModelSerializer):
 class ReceitasSerializer(serializers.ModelSerializer):
     categorias = CategoriasSerializer(many=True)
     ingredientes = IngredientesSerializer(many=True)
-    tempo_de_preparo =  serializers.TimeField(format='%I:%M')
 
     class Meta:
         model = Receitas
@@ -29,8 +28,8 @@ class ReceitasSerializer(serializers.ModelSerializer):
 class ReceitasCategoriaSerializer(serializers.ModelSerializer):
     categorias = CategoriasSerializer(many=True)
     receitas =  ReceitasSerializer(many=True)
-    categoria_macro = CategoriasMacroSerializer()
+    macro = CategoriasMacroSerializer()
 
     class Meta:
         model = ReceitasCategoria
-        fields = ('id','nome','categorias', 'receitas', 'categoria_macro')
+        fields = ('id','nome','categorias', 'receitas', 'macro')

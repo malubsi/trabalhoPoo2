@@ -34,7 +34,7 @@ class Receitas(models.Model):
     data_de_criacao = models.DateTimeField(default=timezone.now)
     ingredientes=models.ManyToManyField(Ingredientes)
     modo_de_preparo = models.TextField()
-    tempo_de_preparo = models.TimeField()
+    tempo_de_preparo = models.CharField(max_length=30,unique=True)
     rendimento = models.PositiveIntegerField(null=True)
     grau_de_dificuldade = models.PositiveIntegerField()
     imagem = models.ImageField(upload_to='fotos',null=True)
@@ -46,7 +46,7 @@ class ReceitasCategoria(models.Model):
     nome = models.CharField(max_length=50,unique=True)
     categorias = models.ManyToManyField(Categorias)
     receitas = models.ManyToManyField(Receitas)
-    categoria_macro = models.ManyToManyField(CategoriasMacro)
+    macro = models.ManyToManyField(CategoriasMacro)
 
     def __str__(self):
         return self.nome

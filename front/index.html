@@ -27,6 +27,7 @@
     <!-- CSS Geral -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
 
     <!-- AngularJS -->
     <script src="lib/angular/angular.js"></script>
@@ -36,14 +37,10 @@
 
     <!-- JS desta Aplicacao -->
     <script type="text/javascript" src="js/app.js"></script>
-  	<script type="text/javascript" src="js/controllers/indexCtrl.js"></script>
-  	<script type="text/javascript" src="js/controllers/macroCategoriasCtrl.js"></script>
-    <script type="text/javascript" src="js/controllers/categoriasCtrl.js"></script>
   	<script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
   	<script type="text/javascript" src="js/controllers/loginCtrl.js"></script>
   	<script type="text/javascript" src="js/controllers/receitaDetalhesCtrl.js"></script>
-  	<script type="text/javascript" src="js/controllers/receitasInCategoriaCtrl.js"></script>
-    <script type="text/javascript" src="js/controllers/categoriasReceitasCtrl.js"></script>
+  	<script type="text/javascript" src="js/controllers/receitasCategoriaCtrl.js"></script>
   	<script type="text/javascript" src="js/services/macroCategoriasAPIService.js"></script>
     <script type="text/javascript" src="js/services/categoriasAPIService.js"></script>
   	<script type="text/javascript" src="js/services/receitasAPIService.js"></script>
@@ -58,7 +55,6 @@
 
   <body>
 
-    <div ng-include="'view/navbar.html'"></div>
 		<div ng-view></div>
     <div ng-include="'view/footer.html'"></div>
 
