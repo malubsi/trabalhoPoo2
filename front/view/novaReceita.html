@@ -1,0 +1,62 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/home">MALU RECEITAS.</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right">
+          <a href="#/home"><button class="dmbutton adicionar">Home</button></a>
+          <a href="#/categorias"><button class="dmbutton adicionar">Categorias</button></a>
+          <a href="#/novaReceita"><button class="dmbutton adicionar2">Nova Receita</button></a>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div id="headerwrapForm">
+  <form name="formCadastroReceita">
+    <div class="form-group">
+            <label for="nome">Nome da Receita: </label>
+            <input type="text" class="form-control" name="nome" placeholder="Digite o nome da receita" ng-model="receita.nome" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="categorias">Categoria: </label>
+            <input type="text" class="form-control" name="categorias" placeholder="Selecione as Categorias" ng-model="receita.categorias" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="data_de_criacao">Data de Criacao: </label>
+            <input type="datetime-local" class="form-control" name="data_de_criacao" placeholder="Insira a data de criação" ng-model="receita.data_de_criacao" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="ingredientes">Ingredientes: </label>
+            <input type="text" class="form-control" name="ingredientes" placeholder="Selecione os Ingredientes" ng-model="receita.ingredientes" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="tempo_de_preparo">Tempo de Preparo: </label>
+            <input type="text" class="form-control" name="tempo_de_preparo" placeholder="Insira o tempo de preparo" ng-model="receita.tempo_de_preparo" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="rendimento">Rendimento: </label>
+            <input type="text" class="form-control" name="rendimento" placeholder="Digite o rendimento em porções" ng-model="receita.rendimento" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="grau_de_dificuldade">Grau de Dificuldade: </label>
+            <input type="text" class="form-control" name="grau_de_dificuldade" placeholder="Digite o nivel de dificuldade de 0 a 10" ng-model="receita.grau_de_dificuldade" ng-required = "true">
+    </div>
+    <div class="form-group">
+            <label for="modo_de_preparo">Modo de Preparo: </label>
+            <textarea type="TextField" class="form-control" name="modo_de_preparo" placeholder="Digite o modo de preparo desta receita" ng-model="receita.modo_de_preparo" ng-required = "true"></textarea>
+    </div>
+    <div class="form-group">
+            <label for="imagem">Imagem: </label>
+            <input type="file" ng-model="receita.imagem" ng-required = "true">
+    </div>
+    <button  type="submit" class="btn btn-success btn-block" ng-click="cadastrar(receita)" ng-disabled="formCadastroReceita.$invalid">Enviar</button>
+  </div>
+</div>

@@ -136,6 +136,12 @@ a:focus {
 		margin-right: 5% auto;
 }
 
+.conteinerForm {
+	padding: 20px;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
 .col-md-6.positionfull {
   position: relative;
   min-height: 1px;
@@ -200,6 +206,16 @@ a:focus {
 .dmbutton.adicionar:hover{
 	color: #ffffff;
 	background-color: #00b3fe;
+	border-color: #ffffff;
+}
+.dmbutton.adicionar2{
+	margin-top: 5px;
+	font-family: 'Voltaire', cursive;
+}
+
+.dmbutton.adicionar2:hover{
+	color: #ffffff;
+	background-color: #5cb85c;
 	border-color: #ffffff;
 }
 
@@ -310,13 +326,13 @@ a:focus {
 }
 
 #headerwrap h3, h5 {
-	color: #ff6565;
+	color: #b85c5c;
 	font-family: 'Voltaire', cursive;
 	font-weight: 400;
 }
 
 #headerwrap h1 {
-	color: #ff6565;
+	color: #b85c5c;
 	font-family: 'Voltaire', cursive;
 	margin-bottom: 25px;
 }
@@ -328,6 +344,38 @@ a:focus {
 }
 
 #headerwrap .img-responsive {
+	margin: 0 auto;
+}
+
+#headerwrapForm {
+	background-color: #d8d8d8;
+	min-height: 550px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+	padding-left: 30%;
+	padding-right: 30%;
+	height: 100%;
+}
+
+#headerwrapForm h3, h5 {
+	color: #ff6565;
+	font-family: 'Voltaire', cursive;
+	font-weight: 400;
+}
+
+#headerwrapForm h1 {
+	color: #ff6565;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
+#headerwrapForm h4 {
+	color: #384452;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
+#headerwrapForm .img-responsive {
 	margin: 0 auto;
 }
 

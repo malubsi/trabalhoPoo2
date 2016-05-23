@@ -6,11 +6,24 @@ angular.module("maluReceitas").config(function($routeProvider){
                     receitas: function(receitasAPI){
                             return receitasAPI.getReceitas();
                     },
-                    categorias: function(macroCategoriasAPI,$route){
-                      return macroCategoriasAPI.getMacroCategorias();
+                    categorias: function(categoriasAPI,$route){
+                      return categoriasAPI.getMacroCategorias();
                     }
             }
         });
+
+        $routeProvider.when("/novaReceita/",{
+        templateUrl:"view/novaReceita.html" ,
+        controller: "novaReceitaCtrl",
+        resolve:{
+                categorias: function(categoriasAPI, $route){
+                        return categoriasAPI.getCategorias();
+                },
+                ingredientes: function(ingredientesAPI, $route){
+                        return ingredientesAPI.getIngredientes();
+                }
+        }
+    });
 
          $routeProvider.when("/cadastro",{
             templateUrl:"view/cadastro.html" ,
@@ -38,6 +51,17 @@ angular.module("maluReceitas").config(function($routeProvider){
         resolve:{
                   categorias: function(categoriasAPI,$route){
                     return categoriasAPI.getCategoriasInMacroCategoria($route.current.params.id);
+                },
+
+        }
+    });
+
+        $routeProvider.when("/categorias/",{
+        templateUrl:"view/categorias.html" ,
+        controller: "categoriasCtrl",
+        resolve:{
+                  categoriasMacro: function(categoriasAPI,$route){
+                    return categoriasAPI.getMacroCategorias();
                 }
         }
     });

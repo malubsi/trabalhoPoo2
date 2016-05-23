@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from rest_framework import generics
-from .serializers import CategoriasMacroSerializer, CategoriasSerializer, ReceitasSerializer, ReceitasCategoriaSerializer
-from .models import CategoriasMacro, Categorias, Receitas, ReceitasCategoria
+from .serializers import CategoriasMacroSerializer, CategoriasSerializer, ReceitasSerializer, ReceitasCategoriaSerializer, IngredientesSerializer
+from .models import CategoriasMacro, Categorias, Receitas, ReceitasCategoria, Ingredientes
 from rest_framework import permissions
 from .permissions import IsOwnerOrReadOnly
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
@@ -22,6 +22,11 @@ class TodasAsReceitas(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Receitas.objects.all()
     serializer_class = ReceitasSerializer
+
+class TodasOsIngredientes(generics.ListCreateAPIView):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    queryset = Ingredientes.objects.all()
+    serializer_class = IngredientesSerializer
 
 
 class DetalheReceita(generics.RetrieveUpdateDestroyAPIView):

@@ -13,23 +13,25 @@
       <ul class="nav navbar-nav navbar-right">
           <a href="#/home"><button class="dmbutton adicionar">Home</button></a>
           <a href="#/categorias"><button class="dmbutton adicionar">Categorias</button></a>
-          <a href="#/cadastroReceita"><button class="dmbutton adicionar">Nova Receita</button></a>
+          <a href="#/novaReceita"><button class="dmbutton adicionar2">Nova Receita</button></a>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
 
 <div id="categoriaswrap">
+
+<h1>EM CONSTRUÇÃO</h1>
   		<div class="container">
       <div class="col-md-12 positionfull" ng-repeat="categoria in categorias">
 
   			<div class="col-md-2">
-						<h3>  {{categoria.nome}}</h3>
-						<div class="hline-home"></div>
+              <h3>  {{categoria.nome}}</h3>
+              <div class="hline-home"></div>
     		</div>
 
     		<div class="col-md-10">
-          <div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
+          <div class="portfolio-item graphic-design" ng-repeat = "receita in receitas">
             <div class="he-wrap tpl6 col-md-6 positionfull">
               <img class="portfolio-centered" ng-src="{{receita.imagem}}" class="img-responsive">
               <div class="he-view">
