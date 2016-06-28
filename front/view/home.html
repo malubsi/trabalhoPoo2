@@ -16,7 +16,7 @@
     <div class="navbar-collapse collapse navbar-right">
       <form class="navbar-form navbar-right" role="search">
           <div class="form-group">
-              <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$"></input>
+              <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$">
           </div>
       </form>
     </div><!--/.nav-collapse -->
@@ -30,8 +30,8 @@
       <div class="portfolio-centered col-md-12 positionfull">
           <div class="recentitems portfolio">
 						<div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
-							<div class="he-wrap tpl6 col-md-6 positionfull">
-								<img class="portfolio-centered" ng-src="{{receita.imagem}}" class="img-responsive">
+							<div class="he-wrap tpl6 col-md-3 positionfull">
+								<img ng-src="{{receita.imagem}}" class="portfolio-centered">
 								<div class="he-view">
 									<div class="bg a0" data-animate="fadeIn">
 												<h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
@@ -60,5 +60,5 @@
 					 <p><br/><a href="#/receitasInCategoria/{{categoria.id}}" class="btn btn-theme">Veja mais</a></p>
 				 </div>
 		 </div>
-	 </div><! --/container -->
-	</div><! --/service -->
+	 </div>
+	</div>

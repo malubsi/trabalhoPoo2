@@ -39,6 +39,9 @@ angular.module("maluReceitas").config(function($routeProvider){
           templateUrl:"view/receitaDetalhes.html" ,
           controller: "receitaDetalhesCtrl",
           resolve:{
+                  categorias: function(categoriasAPI, $route){
+                          return categoriasAPI.getCategorias();
+                  },
                   receita: function(receitasAPI, $route){
                           return receitasAPI.getReceita($route.current.params.id);
                   }
