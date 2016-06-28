@@ -6,8 +6,8 @@
 	Project Name: SOLID - Bootstrap 3 Theme
 	Version: 1.0
 	URL: http://alvarez.is
-	
-################################################################# */ 
+
+################################################################# */
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900);
 @import url("prettyPhoto.css") screen;
@@ -16,15 +16,15 @@
 /*	################################################################
 	1. GENERAL STRUCTURES
 ################################################################# */
-	* { 
+	* {
 		margin: 0;
 		padding: 0px;
-	} 
+	}
 
-body { 
-	background: #ffffff; 
-	margin: 0; 
-	height: 100%; 
+body {
+	background: #ffffff;
+	margin: 0;
+	height: 100%;
 	color: #384452;
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
@@ -35,26 +35,26 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
-p { 
-	padding: 0; 
-	margin-bottom: 12px; 
+p {
+	padding: 0;
+	margin-bottom: 12px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
-	font-size: 14px; 
+	font-size: 14px;
 	line-height: 24px;
-	color: #384452; 
-	margin-top: 10px; 
+	color: #384452;
+	margin-top: 10px;
 }
 
 img {
-	height: auto;
+	height: 500px;
 	max-width: 100%;
 }
 
-a { 
+a {
 	padding: 0;
 	margin: 0;
-	text-decoration: none; 
+	text-decoration: none;
 	-webkit-transition: background-color .4s linear, color .4s linear;
 	-moz-transition: background-color .4s linear, color .4s linear;
 	-o-transition: background-color .4s linear, color .4s linear;
@@ -82,6 +82,60 @@ a:focus {
 	text-align: center
 }
 
+.footer img{
+	height: auto;
+	max-width: 100%;
+}
+
+/*	################################################################
+  HOVERABLE DROPDOWN
+################################################################# */
+/* Dropdown Button */
+.dropbtn {
+	 background-color: #4CAF50;
+	 color: white;
+	 padding: 16px;
+	 font-size: 16px;
+	 border: none;
+	 cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	 position: relative;
+	 display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	 display: none;
+	 position: absolute;
+	 background-color: #f9f9f9;
+	 min-width: 160px;
+	 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	 color: black;
+	 padding: 12px 16px;
+	 text-decoration: none;
+	 display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	 display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	 background-color: #3e8e41;
+}
+
 /*	################################################################
 	BOOTSTRAP MODIFICATIONS & TWEAKS
 ################################################################# */
@@ -92,12 +146,17 @@ a:focus {
 }
 
 .navbar-brand {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Voltaire', sans-serif;
 	font-weight: 900;
+
 }
 
 .navbar-header .navbar-brand {
 	color: white;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #00b3fe;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -118,6 +177,45 @@ a:focus {
 .navbar-default {
 	background-color: #384452;
 	border-color: transparent;
+}
+
+.row.centered.paddingPreparoReceita{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.container {
+    width: 80%;
+		margin-left: 5% auto;
+		margin-right: 5% auto;
+}
+
+.conteinerForm {
+	padding: 20px;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+.col-md-3.positionfull {
+  position: relative;
+  min-height: 1px;
+	padding-top: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.col-md-12.positionfull {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.receitadescricao{
+	position: relative;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: white;
 }
 
 .dropdown-menu {
@@ -144,6 +242,31 @@ a:focus {
   color: #fff;
   background-color: #00b3fe;
   border-color: #00b3fe;
+}
+
+.nav.navbar-nav.navbar-right li a{
+	font-size: 13px;
+}
+
+.dmbutton.adicionar{
+	margin-top: 5px;
+	font-family: 'Voltaire', cursive;
+}
+
+.dmbutton.adicionar:hover{
+	color: #ffffff;
+	background-color: #00b3fe;
+	border-color: #ffffff;
+}
+.dmbutton.adicionar2{
+	margin-top: 5px;
+	font-family: 'Voltaire', cursive;
+}
+
+.dmbutton.adicionar2:hover{
+	color: #ffffff;
+	background-color: #5cb85c;
+	border-color: #ffffff;
 }
 
 .dmbutton:hover,
@@ -200,29 +323,109 @@ a:focus {
 	border-bottom: 2px solid #ffffff;
 	margin-bottom: 25px;
 }
+
+.hline-home{
+	border-bottom: 2px solid #000000;
+	margin-bottom: 5px;
+}
+
+.linkFooter a{
+	color: white;
+}
+
+.linkFooter a:hover{
+	color: #00b3fe;
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+
 /*	################################################################
 	SITE WRAPS
 ################################################################# */
 
-#headerwrap {
-	background-color: #00b3fe;
+#categoriaswrap{
+	background-color: #00cba1;
 	min-height: 550px;
 	padding-top: 100px;
 	padding-bottom: 0px;
 	text-align: center;
+	height: 100%;
 }
 
-#headerwrap h3, h5 {
+#categoriaswrap h3, h5 {
 	color: white;
 	font-weight: 400;
 }
 
-#headerwrap h1 {
+#categoriaswrap h1 {
 	color: white;
 	margin-bottom: 25px;
 }
 
+#categoriaswrap .img-responsive {
+	margin: 0 auto;
+}
+
+#headerwrap {
+	background-color: #d8d8d8;
+	min-height: 550px;
+	padding-top: 100px;
+	padding-bottom: 0px;
+	text-align: center;
+	height: 100%;
+}
+
+#headerwrap h3, h5 {
+	color: #b85c5c;
+	font-family: 'Voltaire', cursive;
+	font-weight: 400;
+}
+
+#headerwrap h1 {
+	color: #b85c5c;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
+#headerwrap h4 {
+	color: #384452;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
 #headerwrap .img-responsive {
+	margin: 0 auto;
+}
+
+#headerwrapForm {
+	background-color: #d8d8d8;
+	min-height: 550px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+	padding-left: 30%;
+	padding-right: 30%;
+	height: 100%;
+}
+
+#headerwrapForm h3, h5 {
+	color: #ff6565;
+	font-family: 'Voltaire', cursive;
+	font-weight: 400;
+}
+
+#headerwrapForm h1 {
+	color: #ff6565;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
+#headerwrapForm h4 {
+	color: #384452;
+	font-family: 'Voltaire', cursive;
+	margin-bottom: 25px;
+}
+
+#headerwrapForm .img-responsive {
 	margin: 0 auto;
 }
 
@@ -240,6 +443,7 @@ a:focus {
 
 /* Portfolio Wrap */
 #portfoliowrap {
+	overflow: hidden;
 	padding-top: 60px;
 	margin-bottom: 60px;
 	display: block;
@@ -284,52 +488,6 @@ a:focus {
 	background-color:#00b3fe;
 	background-color:rgba(0,179,254,.9);
 	text-align:center;
-}
-
-/* Testimonials Wrap */
-#twrap {
-	background: url(../img/t-back.jpg) no-repeat center top;
-	margin-top: 0px;
-	padding-top:60px;
-	text-align:center;
-	background-attachment: relative;
-	background-position: center center;
-	min-height: 450px;
-	width: 100%;
-	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#twrap i {
-	font-size: 50px;
-	color: white;
-	margin-bottom: 25px;
-}
-
-#twrap p {
-	color: white;
-	font-size: 15px;
-	line-height: 30px;
-}
-
-/* clients logo */
-#cwrap {
-	background: #f7f7f7;
-	margin-top: 0px;
-	padding-top: 80px;
-	padding-bottom: 100px;
-}
-
-#cwrap h3 {
-	margin-bottom: 60px;
 }
 
 /* Footer */
@@ -409,7 +567,7 @@ csmall2 {
 	background-position: center center;
 	min-height: 400px;
 	width: 100%;
-	
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -422,27 +580,27 @@ csmall2 {
 }
 
 /* Blog Page */
-.popular-posts { 
+.popular-posts {
 	margin: 0px;
 	padding-left: 0px;
 	}
-	
+
 .popular-posts li {
-	list-style: none; 
-	margin-bottom: 20px; 
+	list-style: none;
+	margin-bottom: 20px;
 	min-height: 70px;
 }
-.popular-posts li a, 
+.popular-posts li a,
 .popular-posts li a:hover {
-	color:#2f2f2f; 
+	color:#2f2f2f;
 	text-decoration: none;
 	}
-	
+
 .popular-posts li img {
-	float: left; 
+	float: left;
 	margin-right: 20px;
 	}
-	
+
 .popular-posts li em {
 	font-family: 'Lato', sans-serif;
 	font-size: 12px;
@@ -452,7 +610,7 @@ csmall2 {
 .popular-posts p {
 	line-height: normal;
 	margin-bottom: auto;
-}	
+}
 
 .share i {
 	padding-right: 15px;

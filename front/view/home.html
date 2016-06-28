@@ -1,0 +1,64 @@
+<!-- *****************************************************************************************************************
+ NAVBAR HOME
+ ***************************************************************************************************************** -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/home">MALU RECEITAS.</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$">
+          </div>
+      </form>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+	<!-- *****************************************************************************************************************
+	 RECEITAS
+	 ***************************************************************************************************************** -->
+ <div id="portfoliowrap">
+      <div class="portfolio-centered col-md-12 positionfull">
+          <div class="recentitems portfolio">
+						<div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
+							<div class="he-wrap tpl6 col-md-3 positionfull">
+								<img ng-src="{{receita.imagem}}" class="portfolio-centered">
+								<div class="he-view">
+									<div class="bg a0" data-animate="fadeIn">
+												<h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
+												<p class="receitadescricao">{{receita.modo_de_preparo}}</p>
+                        <a href="#/receita/{{receita.id}}" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+									</div>
+								</div><!-- he view -->
+							</div><!-- he wrap -->
+						</div><!-- end col-12 -->
+					</div><!-- portfolio -->
+			</div><!-- portfolio container -->
+ </div><!--/Portfoliowrap -->
+
+	 <!-- *****************************************************************************************************************
+		CATEGORIAS MACRO
+		***************************************************************************************************************** -->
+	<div id="service">
+	 <div class="container">
+			 <div class="row centered">
+				 <h3>CATEGORIAS</h3>
+				 <div class="col-md-4" ng-repeat= "categoria in categorias">
+					 <h4>{{categoria.nome}}</h4>
+				 <div class="hline-home"></div>
+					 <p>Veja mais deliciosas receitas na categoria <strong>{{categoria.nome}}</strong></p>
+				 <div class="hline-home"></div>
+					 <p><br/><a href="#/receitasInCategoria/{{categoria.id}}" class="btn btn-theme">Veja mais</a></p>
+				 </div>
+		 </div>
+	 </div>
+	</div>
