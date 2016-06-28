@@ -10,7 +10,7 @@ class CategoriasMacroSerializer(serializers.ModelSerializer):
 class CategoriasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categorias
-        fields = ('id', 'nome')
+        fields = ('id', 'nome', 'imagem')
 
 class IngredientesSerializer(serializers.ModelSerializer):
     class Meta:

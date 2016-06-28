@@ -25,20 +25,14 @@
   </div>
 </div>
 
-<div id="portfoliowrap">
-     <div class="portfolio-centered col-md-12 positionfull">
-         <div class="recentitems portfolio">
-           <div class="portfolio-item graphic-design" ng-repeat = "categoria in categorias | filter:filtroDeBusca">
-             <div class="he-wrap tpl6 col-md-3 positionfull">
-               <img ng-src="{{categoria.imagem}}" class="portfolio-centered">
-               <div class="he-view">
-                 <div class="bg a0" data-animate="fadeIn">
-                       <h3 class="a1" data-animate="fadeInDown">{{categoria.nome | uppercase}}</h3>
-                       <a href="#/receitasInCategoria/{{categoria.id}}" class="dmbutton a2" data-animate="fadeInUp">Veja Mais</a>
-                 </div>
-               </div><!-- he view -->
-             </div><!-- he wrap -->
-           </div><!-- end col-12 -->
-         </div><!-- portfolio -->
-     </div><!-- portfolio container -->
-</div><!--/Portfoliowrap -->
+<div id="categoriaswrap">
+  <div class="he-wrap tpl6 col-md-3 positionfull">
+    <img ng-src="{{receita.imagem}}" class="portfolio-centered">
+    <div class="he-view">
+      <div class="bg a0" data-animate="fadeIn">
+            <h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
+            <p class="receitadescricao">{{receita.modo_de_preparo}}</p>
+            <a href="#/receita/{{receita.id}}" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+      </div>
+    </div>
+</div>
