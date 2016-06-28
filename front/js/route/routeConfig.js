@@ -1,7 +1,7 @@
 angular.module("maluReceitas").config(function($routeProvider){
         $routeProvider.when("/home",{
             templateUrl:"view/home.html" ,
-            controller: "mainCtrl" ,
+            controller: "receitasCategoriasCtrl" ,
             resolve:{
                     receitas: function(receitasAPI){
                             return receitasAPI.getReceitas();
@@ -25,16 +25,6 @@ angular.module("maluReceitas").config(function($routeProvider){
         }
     });
 
-         $routeProvider.when("/cadastro",{
-            templateUrl:"view/cadastro.html" ,
-            controller: "loginCtrl"
-        });
-
-         $routeProvider.when("/login",{
-            templateUrl:"view/login.html" ,
-            controller: "loginCtrl"
-        });
-
           $routeProvider.when("/receita/:id",{
           templateUrl:"view/receitaDetalhes.html" ,
           controller: "receitaDetalhesCtrl",
@@ -49,13 +39,23 @@ angular.module("maluReceitas").config(function($routeProvider){
       });
 
         $routeProvider.when("/receitasInCategoria/:id",{
-        templateUrl:"view/receitasCategoria.html" ,
-        controller: "receitasCategoriaCtrl",
+        templateUrl:"view/receitasInCategorias.html" ,
+        controller: "receitasCtrl",
+        resolve:{
+                  receitas: function(receitasAPI,$route){
+                    return receitasAPI.getReceitasInCategoria($route.current.params.id);
+                },
+
+        }
+    });
+
+        $routeProvider.when("/categorias/:id",{
+        templateUrl:"view/categoriasDetalhes.html" ,
+        controller: "categoriasCtrl",
         resolve:{
                   categorias: function(categoriasAPI,$route){
                     return categoriasAPI.getCategoriasInMacroCategoria($route.current.params.id);
-                },
-
+                }
         }
     });
 
@@ -63,8 +63,8 @@ angular.module("maluReceitas").config(function($routeProvider){
         templateUrl:"view/categorias.html" ,
         controller: "categoriasCtrl",
         resolve:{
-                  categoriasMacro: function(categoriasAPI,$route){
-                    return categoriasAPI.getMacroCategorias();
+                  categorias: function(categoriasAPI,$route){
+                    return categoriasAPI.getCategorias();
                 }
         }
     });

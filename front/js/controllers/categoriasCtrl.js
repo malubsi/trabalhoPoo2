@@ -1,4 +1,3 @@
-angular.module("maluReceitas").controller("categoriasCtrl", function($scope, $routeParams, categoriasMacro, categoriasAPI){
-    $scope.categoriasMacro= categorias.data;
-
+angular.module("maluReceitas").controller("categoriasCtrl", function($scope, $routeParams, categorias){
+    $scope.categorias= categorias.data;
 });

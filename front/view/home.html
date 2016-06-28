@@ -16,9 +16,10 @@
     <div class="navbar-collapse collapse navbar-right">
       <form class="navbar-form navbar-right" role="search">
           <div class="form-group">
-              <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$">
+              <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$"></input>
           </div>
       </form>
+      <a href="#/novaReceita"><button class="dmbutton adicionar2">Nova Receita</button></a>
     </div><!--/.nav-collapse -->
   </div>
 </div>
@@ -36,7 +37,7 @@
 									<div class="bg a0" data-animate="fadeIn">
 												<h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
 												<p class="receitadescricao">{{receita.modo_de_preparo}}</p>
-                        <a href="#/receita/{{receita.id}}" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+                        <a href="#/receita/{{receita.id}}" onclick="window.scrollTo(0, 0)" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
 									</div>
 								</div><!-- he view -->
 							</div><!-- he wrap -->
@@ -57,7 +58,7 @@
 				 <div class="hline-home"></div>
 					 <p>Veja mais deliciosas receitas na categoria <strong>{{categoria.nome}}</strong></p>
 				 <div class="hline-home"></div>
-					 <p><br/><a href="#/receitasInCategoria/{{categoria.id}}" class="btn btn-theme">Veja mais</a></p>
+					 <p><br/><a href="#/categorias/{{categoria.id}}" onclick="window.scrollTo(0, 0)" class="btn btn-theme">Veja mais</a></p>
 				 </div>
 		 </div>
 	 </div>
