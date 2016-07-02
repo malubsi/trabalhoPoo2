@@ -6,20 +6,20 @@ angular.module("maluReceitas").config(function($routeProvider){
                     receitas: function(receitasAPI){
                             return receitasAPI.getReceitas();
                     },
-                    categorias: function(categoriasAPI,$route){
+                    categorias: function(categoriasAPI){
                       return categoriasAPI.getMacroCategorias();
                     }
             }
         });
 
-        $routeProvider.when("/novaReceita/",{
+        $routeProvider.when("/novaReceita",{
         templateUrl:"view/novaReceita.html" ,
         controller: "novaReceitaCtrl",
         resolve:{
-                categorias: function(categoriasAPI, $route){
+                categorias: function(categoriasAPI){
                         return categoriasAPI.getCategorias();
                 },
-                ingredientes: function(ingredientesAPI, $route){
+                ingredientes: function(ingredientesAPI){
                         return ingredientesAPI.getIngredientes();
                 }
         }
@@ -29,7 +29,7 @@ angular.module("maluReceitas").config(function($routeProvider){
           templateUrl:"view/receitaDetalhes.html" ,
           controller: "receitaDetalhesCtrl",
           resolve:{
-                  categorias: function(categoriasAPI, $route){
+                  categorias: function(categoriasAPI){
                           return categoriasAPI.getCategorias();
                   },
                   receita: function(receitasAPI, $route){
@@ -55,17 +55,17 @@ angular.module("maluReceitas").config(function($routeProvider){
         resolve:{
                   categorias: function(categoriasAPI,$route){
                     return categoriasAPI.getCategoriasInMacroCategoria($route.current.params.id);
-                }
+                  }
         }
     });
 
-        $routeProvider.when("/categorias/",{
+        $routeProvider.when("/categorias",{
         templateUrl:"view/categorias.html" ,
         controller: "categoriasCtrl",
         resolve:{
-                  categorias: function(categoriasAPI,$route){
+                  categorias: function(categoriasAPI){
                     return categoriasAPI.getCategorias();
-                }
+                  }
         }
     });
 
