@@ -1,3 +1,6 @@
+<!-- *****************************************************************************************************************
+ NAVBAR
+ ***************************************************************************************************************** -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -10,29 +13,46 @@
       <a class="navbar-brand" href="#/home">MALU RECEITAS.</a>
     </div>
     <div class="navbar-collapse collapse navbar-right">
-      <ul class="nav navbar-nav navbar-right">
-          <div class="navbar-collapse collapse navbar-right">
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Digite uma categoria..." ng-model="$parent.filtroDeBusca.$"></input>
-                </div>
-            </form>
-          </div><!--/.nav-collapse -->
-          <a href="#/home" onclick="window.scrollTo(0, 0)"><button class="dmbutton adicionar">Home</button></a>
-          <a href="#/novaReceita"><button class="dmbutton adicionar2">Nova Receita</button></a>
-      </ul>
-    </div><!--/.nav-collapse -->
+      <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$"></input>
+          </div>
+      </form>
+      <a href="#/home" onclick="window.scrollTo(0, 0)"><button class="dmbutton adicionar">Home</button></a>
+      <a href="#/categorias" onclick="window.scrollTo(0, 0)"><button class="dmbutton adicionar">Categorias</button></a>
+      <a href="#/novaReceita"><button class="dmbutton adicionar2">Nova Receita</button></a>
+    </div>
   </div>
 </div>
 
-<div id="categoriaswrap">
-  <div class="he-wrap tpl6 col-md-3 positionfull">
-    <img ng-src="{{receita.imagem}}" class="portfolio-centered">
-    <div class="he-view">
-      <div class="bg a0" data-animate="fadeIn">
-            <h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
-            <p class="receitadescricao">{{receita.modo_de_preparo}}</p>
-            <a href="#/receita/{{receita.id}}" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+<!-- *****************************************************************************************************************
+RECEITAS POR CATEGORIA
+ ***************************************************************************************************************** -->
+
+ <div id="portfoliowrap">
+
+     <!--******Quando existirem itens na lista *****-->
+      <div class="portfolio-centered col-md-12 positionfull" ng-hide="verifica">
+          <div class="recentitems portfolio">
+            <div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
+              <div class="he-wrap tpl6 col-md-3 positionfull">
+                <img ng-src="{{receita.imagem}}" class="portfolio-centered">
+                <div class="he-view">
+                  <div class="bg a0" data-animate="fadeIn">
+                      <h3 class="a1" data-animate="fadeInDown">{{receita.nome | uppercase}}</h3>
+                      <p class="receitadescricao">{{receita.modo_de_preparo}}</p>
+                      <a href="#/receita/{{receita.id}}" onclick="window.scrollTo(0, 0)" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
-</div>
+
+      <!--******Quando nao existirem itens na lista *****-->
+      <div class="portfolio-centered col-md-12 positionfull" ng-if="verifica">
+        <div class="emptyList">
+          <h1>DESCULPE, NÃO EXISTEM ITENS PARA ESSA BUSCA.</h1>
+        </div>
+      </div>
+ </div>

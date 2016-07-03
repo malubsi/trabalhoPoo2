@@ -1,5 +1,5 @@
 <!-- *****************************************************************************************************************
- NAVBAR HOME
+ NAVBAR
  ***************************************************************************************************************** -->
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -19,8 +19,9 @@
               <input type="text" class="form-control" placeholder="Digite aqui alguma receita..." ng-model="$parent.filtroDeBusca.$"></input>
           </div>
       </form>
+      <a href="#/categorias" onclick="window.scrollTo(0, 0)"><button class="dmbutton adicionar">Categorias</button></a>
       <a href="#/novaReceita"><button class="dmbutton adicionar2">Nova Receita</button></a>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </div>
 
@@ -28,7 +29,8 @@
 	 RECEITAS
 	 ***************************************************************************************************************** -->
  <div id="portfoliowrap">
-      <div class="portfolio-centered col-md-12 positionfull">
+      <!--******Quando existirem itens na lista *****-->
+      <div class="portfolio-centered col-md-12 positionfull" ng-hide="verificaReceita">
           <div class="recentitems portfolio">
 						<div class="portfolio-item graphic-design" ng-repeat = "receita in receitas | filter:filtroDeBusca">
 							<div class="he-wrap tpl6 col-md-3 positionfull">
@@ -39,27 +41,42 @@
 												<p class="receitadescricao">{{receita.modo_de_preparo}}</p>
                         <a href="#/receita/{{receita.id}}" onclick="window.scrollTo(0, 0)" class="dmbutton a2" data-animate="fadeInUp">Mais Informacoes</a>
 									</div>
-								</div><!-- he view -->
-							</div><!-- he wrap -->
-						</div><!-- end col-12 -->
-					</div><!-- portfolio -->
-			</div><!-- portfolio container -->
- </div><!--/Portfoliowrap -->
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+
+      <!--******Quando nao existirem itens na lista *****-->
+      <div class="portfolio-centered col-md-12 positionfull" ng-if="verificaReceita">
+        <div class="emptyList">
+          <h1>DESCULPE, NÃO EXISTEM ITENS PARA ESSA BUSCA.</h1>
+        </div>
+      </div>
+ </div>
 
 	 <!-- *****************************************************************************************************************
 		CATEGORIAS MACRO
 		***************************************************************************************************************** -->
 	<div id="service">
-	 <div class="container">
-			 <div class="row centered">
-				 <h3>CATEGORIAS</h3>
-				 <div class="col-md-4" ng-repeat= "categoria in categorias">
-					 <h4>{{categoria.nome}}</h4>
-				 <div class="hline-home"></div>
-					 <p>Veja mais deliciosas receitas na categoria <strong>{{categoria.nome}}</strong></p>
-				 <div class="hline-home"></div>
-					 <p><br/><a href="#/categorias/{{categoria.id}}" onclick="window.scrollTo(0, 0)" class="btn btn-theme">Veja mais</a></p>
-				 </div>
-		 </div>
-	 </div>
+    <!--******Quando existirem itens na lista *****-->
+  	 <div class="container" ng-hide="verificaCategoria">
+  			 <div class="row centered">
+  				 <h3>CATEGORIAS</h3>
+  				 <div class="col-md-4" ng-repeat= "categoria in categorias">
+  					 <h4>{{categoria.nome}}</h4>
+  				 <div class="hline-home"></div>
+  					 <p>Veja mais deliciosas receitas na categoria <strong>{{categoria.nome}}</strong></p>
+  				 <div class="hline-home"></div>
+  					 <p><br/><a href="#/categorias/{{categoria.id}}" onclick="window.scrollTo(0, 0)" class="btn btn-theme">Veja mais</a></p>
+  				 </div>
+  		 </div>
+  	 </div>
+
+     <!--******Quando nao existirem itens na lista *****-->
+     <div class="portfolio-centered col-md-12 positionfull" ng-if="verificaCategoria">
+       <div class="emptyList">
+         <h1>DESCULPE, NÃO EXISTEM ITENS PARA ESSA BUSCA.</h1>
+       </div>
+     </div>
 	</div>
