@@ -50,7 +50,7 @@ angular.module("maluReceitas").config(function($routeProvider){
     });
 
         $routeProvider.when("/categorias/:id",{
-        templateUrl:"view/categoriasDetalhes.html" ,
+        templateUrl:"view/categorias.html" ,
         controller: "categoriasCtrl",
         resolve:{
                   categorias: function(categoriasAPI,$route){
